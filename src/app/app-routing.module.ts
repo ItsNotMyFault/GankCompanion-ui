@@ -5,8 +5,8 @@ import { HowToUseComponent } from './how-to-use/how-to-use.component';
 import { PartyComponent } from './party/party.component';
 
 const routes: Routes = [
-  { path: 'party', component: PartyComponent },
   { path: 'home', component: HomeComponent },
+  { path: 'party', component: PartyComponent },
   { path: 'tutorial', component: HowToUseComponent },
 ];
 
