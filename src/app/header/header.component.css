@@ -1,0 +1,16 @@
+.navbar-custom-dark {
+    background-color: rgb(70, 67, 64);
+    color: white;
+}
+
+a {
+    color: white;
+}
+
+li :hover {
+    background-color: rgb(36, 87, 49);
+}
+
+li :focus {
+    background-color: rgb(36, 87, 49);
+}

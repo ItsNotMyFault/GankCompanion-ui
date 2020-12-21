@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { PartyMember } from './party-member.model';
 
 @Component({
   selector: 'app-party-members',
@@ -7,7 +8,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PartyMembersComponent implements OnInit {
 
-  constructor() { }
+  partyMembers: PartyMember[] = [];
+
+  constructor() { 
+    //with a service fetch partyMembers...
+  }
 
   ngOnInit(): void {
   }
