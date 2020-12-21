@@ -8,10 +8,12 @@ import { PartyMember } from './party-member.model';
 })
 export class PartyMembersComponent implements OnInit {
 
-  partyMembers: PartyMember[] = [];
+  test: PartyMember = new PartyMember("Veloester", "2020-12-10 23:10:09", "5 minutes", "99%", "500k");
+  partyMembers: PartyMember[] = new Array();
 
-  constructor() { 
+  constructor() {
     //with a service fetch partyMembers...
+    this.partyMembers = [this.test, this.test, this.test];
   }
 
   ngOnInit(): void {

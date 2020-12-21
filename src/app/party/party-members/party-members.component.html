@@ -6,6 +6,16 @@
                  style="color: rgb(238, 238, 238);">
                 <div class="rs-list-item-content">
                     <div class="rs-flex-box-grid rs-flex-box-grid-top rs-flex-box-grid-start">
+                        <a style="cursor: pointer; background-color: black; color: white;" class="list-group-item clearfix">
+                            <div class="row">
+                                <div class="col-sm-2">Player Name</div>
+                                <div class="col-sm-2">joinedTime</div>
+                                <div class="col-sm-2">timeInParty</div>
+                                <div class="col-sm-2">lootSharePercent</div>
+                                <div class="col-sm-2">lootShareSilver</div>
+                            </div>
+                        </a>
+                   
                         <app-party-member *ngFor="let partyMemberEl of partyMembers; "
                                           [partyMember]="partyMemberEl">
                         </app-party-member>
