@@ -10,6 +10,7 @@ import { RouterModule } from '@angular/router';
 import { HomeComponent } from './home/home.component';
 import { YouTubePlayerModule } from '@angular/youtube-player';
 import { PartyMemberComponent } from './party/party-members/party-member/party-member.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -24,6 +25,7 @@ import { PartyMemberComponent } from './party/party-members/party-member/party-m
     RouterModule,
     PartyModule,
     YouTubePlayerModule
+  
   ],
   providers: [],
   bootstrap: [AppComponent]

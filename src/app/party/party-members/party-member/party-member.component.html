@@ -1,10 +1,10 @@
 <a style="cursor: pointer;" routerLinkActive="active" class="list-group-item clearfix">
     <div class="row">
-        <div class="col-sm-2">{{ partyMember.name }}</div>
-        <div class="col-sm-2">{{ partyMember.joinedTime }}</div>
+        <div class="col-sm-3">{{ partyMember.name }}</div>
+        <div class="col-sm-3">{{ partyMember.joinedTime }}</div>
         <div class="col-sm-2">{{ partyMember.timeInParty }}</div>
         <div class="col-sm-2">{{ partyMember.lootSharePercent }}</div>
-        <div class="col-sm-2">{{ partyMember.lootShareSilver }}</div>
+        <div class="col-sm-2">{{ partyMember.lootShareSilver | number : '1.0-2' }}</div>
 
     </div>
 </a>

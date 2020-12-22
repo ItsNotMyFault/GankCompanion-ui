@@ -1,21 +1,25 @@
 <div class="container-fluid">
     <div class="row">
         <div class="col-sm-3">
-        </div>
-        <div class="col-sm-3">
             <app-gank-report></app-gank-report>
-        </div>
-        <div class="col-sm-3">
             <app-graph-kills></app-graph-kills>
         </div>
-    </div>
-    <div class="row">
-        <div class="col-sm-2">
+        <div class="col-sm-1"> </div>
+        <div class="col-sm-8">
+            <label class="col-sm-3">Estimated total loot : </label>
+            <div class="col-sm-2">
+                <input type="text"
+                       [(ngModel)]="totalLoot"
+                       class="form-control"
+                       placeholder="115.65 k">
+            </div>
+
+            {{this.totalLoot}}
+            <div class="row col-sm-12"
+                 style="padding-top: 20px;">
+                <app-party-members [partyTotalLoot]=this.totalLoot></app-party-members>
+            </div>
         </div>
-        <div class="col-sm-9">
-            <app-party-members></app-party-members>
-        </div>
-        <div class="col-sm-2">
-        </div>
+
     </div>
 </div>

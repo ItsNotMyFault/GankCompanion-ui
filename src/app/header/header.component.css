@@ -1,10 +1,10 @@
 .navbar-custom-dark {
-    background-color: rgb(70, 67, 64);
-    color: white;
+    /* background-color: rgb(70, 67, 64); */
+    background-color: rgb(211, 211, 211);
 }
 
 a {
-    color: white;
+    color: black;
 }
 
 li :hover {
