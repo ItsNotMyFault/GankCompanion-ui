@@ -1,15 +1,15 @@
 export class PartyMember {
-    public name: string;
+    public playerName: string;
     public joinedTime: string;
-    public timeInParty: string;
-    public lootSharePercent: number;
+    public timeInParty: number;
+    public percentTimeInParty: number;
     public lootShareSilver: number;
 
-    constructor(name: string, joinedTime: string, timeInParty: string, lootSharePercent: number, lootShareSilver: number) {
-        this.name = name;
+    constructor(playerName: string, joinedTime: string, timeInParty: number, percentTimeInParty: number, LootShareSilver: number) {
+        this.playerName = playerName;
         this.joinedTime = joinedTime;
         this.timeInParty = timeInParty;
-        this.lootSharePercent = lootSharePercent;
-        this.lootShareSilver = lootShareSilver;
+        this.percentTimeInParty = percentTimeInParty;
+        this.lootShareSilver = LootShareSilver;
     }
 }

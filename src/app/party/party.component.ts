@@ -14,24 +14,28 @@ import { PartyService } from './party.service';
 })
 export class PartyComponent implements OnInit, OnChanges {
 
-  partyId: string | null;
+  partyId!: string;
   totalLoot: number;
+  partyMembers: PartyMember[];
 
-  // totalLootResult = 0;
-  constructor(private activatedRoute: ActivatedRoute, partyService: PartyService) {
-    this.partyId = this.activatedRoute.snapshot.paramMap.get('id');
-    console.log(this.partyId);
+  constructor(private activatedRoute: ActivatedRoute, private partyService: PartyService) {
     this.totalLoot = 0;
+    this.partyMembers = [];
+
   }
   ngOnChanges(changes: SimpleChanges): void {
-    throw new Error('Method not implemented.');
+
   }
 
-  // SetEstimatedLoot() {
-  //   this.totalLootResult = this.totalLoot.nativeElement.value;
-  // }
-
-  ngOnInit(): void {
+  async ngOnInit(): Promise<void> {
+    const fechtedPartyId = this.activatedRoute.snapshot.paramMap.get('id');
+    console.log("fechtedPartyId: " + fechtedPartyId);
+    this.partyId = fechtedPartyId !== null ? fechtedPartyId : "0";
+    console.log("partyId: " + this.partyId);
+    const ptMembers = await this.partyService.getPartyMembers(this.partyId);
+    console.log(ptMembers);
+    this.partyMembers = ptMembers.partyMemberResponses;
+    console.log(this.partyMembers);
   }
 
 }

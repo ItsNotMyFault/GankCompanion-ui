@@ -1,0 +1,8 @@
+<a style="cursor: pointer;" (click)="NavigateToParty(this.partyInstance.partyFirebaseId)" routerLinkActive="active" class="list-group-item clearfix">
+    <div class="row">
+        <div class="col-sm-3">{{ this.partyInstance.createdDate }}</div>
+        <div class="col-sm-3">{{ this.partyInstance.players }}</div>
+        <div class="col-sm-4">{{ this.partyInstance.duration | number : '1.0-0' }} minute(s)</div>
+        <div class="col-sm-2">{{ this.partyInstance.isActive }}</div>
+    </div>
+</a>

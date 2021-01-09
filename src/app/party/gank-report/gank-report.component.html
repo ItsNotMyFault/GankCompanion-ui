@@ -11,7 +11,7 @@
                 </svg>
                 <p style=" margin-top: 10px;">Start Time:</p>
             </div>
-            <p style="margin-top: 10px; margin-left: 30px;">12-19: 20:30</p>
+            <p style="margin-top: 10px; margin-left: 30px;">{{this.partyStartTime}}</p>
         </div>
         <div style="display: flex; align-items: center; justify-content: space-between;">
             <div style="display: flex; align-items: center;">
@@ -29,7 +29,7 @@
                 </svg>
                 <p style="margin-top: 10px;">Duration:</p>
             </div>
-            <p style="margin-left: 30px;  margin-top: 10px;">12-19: 20:35</p>
+            <p style="margin-left: 30px;  margin-top: 10px;">{{ this.partyDuration | number : '1.0-0' }} minute(s)</p>
         </div>
         <div style="display: flex; align-items: center; justify-content: space-between;">
             <div style="display: flex; align-items: center;">
@@ -48,7 +48,7 @@
                 </svg>
                 <p style="margin-top: 10px;">Total players:</p>
             </div>
-            <p style="margin-top: 10px;">10</p>
+            <p style="margin-top: 10px;">{{this.playerCount}}</p>
         </div>
         <div style="display: flex; align-items: center; justify-content: space-between;">
             <div style="display: flex; align-items: center;">
@@ -67,7 +67,7 @@
                 </svg>
                 <p style="margin-top: 10px;">Total kills</p>
             </div>
-            <p style=" margin-left: 30px;  margin-top: 10px;">9999</p>
+            <p style=" margin-left: 30px;  margin-top: 10px;">{{this.killCount}}</p>
         </div>
 
     </div>

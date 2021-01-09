@@ -9,13 +9,13 @@
                         <a style="cursor: pointer; background-color: black; color: white;" class="list-group-item clearfix">
                             <div class="row">
                                 <div class="col-sm-3">Player Name</div>
-                                <div class="col-sm-3">joinedTime</div>
-                                <div class="col-sm-2">timeInParty</div>
-                                <div class="col-sm-2">lootSharePercent</div>
-                                <div class="col-sm-2">lootShareSilver</div>
+                                <div class="col-sm-3">Joined Time</div>
+                                <div class="col-sm-2">Time in party</div>
+                                <div class="col-sm-2">% Time in party</div>
+                                <div class="col-sm-2">Silver share</div>
                             </div>
                         </a>
-                   
+                        
                         <app-party-member *ngFor="let partyMemberEl of partyMembers; "
                                           [partyMember]="partyMemberEl">
                         </app-party-member>

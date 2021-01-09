@@ -1,0 +1,25 @@
+<div class="panel panel-default">
+    <div class="panel-heading">Party</div>
+    <div class="panel-body">
+        <div class="rs-list rs-list-hover">
+            <div class="rs-list-item fameandkills rs-list-item-md"
+                 style="color: rgb(238, 238, 238);">
+                <div class="rs-list-item-content">
+                    <div class="rs-flex-box-grid rs-flex-box-grid-top rs-flex-box-grid-start">
+                        <a style="cursor: pointer; background-color: black; color: white;"
+                           class="list-group-item clearfix">
+                            <div class="row">
+                                <div class="col-sm-3">Created Date</div>
+                                <div class="col-sm-3">Players</div>
+                                <div class="col-sm-4">Duration</div>
+                                <div class="col-sm-2">Is Active</div>
+                            </div>
+                        </a>
+                        <app-party-instance *ngFor="let party of parties"
+                                            [partyInstance]="party"></app-party-instance>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

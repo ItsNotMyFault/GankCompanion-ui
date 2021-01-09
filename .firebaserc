@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "gankcompanion": {
+      "hosting": {
+        "gankcompanion-ui": [
+          "gankcompanion"
+        ]
+      }
+    }
+  }
+}

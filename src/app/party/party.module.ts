@@ -6,6 +6,7 @@ import { PartyMembersComponent } from './party-members/party-members.component';
 import { PartyComponent } from './party.component';
 import { PartyMemberComponent } from './party-members/party-member/party-member.component';
 import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 
 @NgModule({
@@ -25,7 +26,8 @@ import { FormsModule } from '@angular/forms';
     ],
     imports: [
         BrowserModule,
-        FormsModule
+        FormsModule,
+        HttpClientModule
     ],
     providers: [],
 })

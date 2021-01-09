@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnChanges, OnInit, SimpleChanges } from '@angular/core';
 import { PartyMember } from '../party-member.model';
 import { Input } from '@angular/core';
 
@@ -7,10 +7,13 @@ import { Input } from '@angular/core';
   templateUrl: './party-member.component.html',
   styleUrls: ['./party-member.component.css']
 })
-export class PartyMemberComponent implements OnInit {
-
+export class PartyMemberComponent implements OnInit, OnChanges {
   @Input() partyMember!: PartyMember;
 
-  ngOnInit(): void {  }
+  ngOnInit(): void { }
+
+  ngOnChanges(changes: SimpleChanges): void {
+    console.log("partyMember component", this.partyMember);
+  }
 
 }

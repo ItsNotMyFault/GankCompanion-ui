@@ -9,8 +9,10 @@ import { PartyModule } from './party/party.module';
 import { RouterModule } from '@angular/router';
 import { HomeComponent } from './home/home.component';
 import { YouTubePlayerModule } from '@angular/youtube-player';
-import { PartyMemberComponent } from './party/party-members/party-member/party-member.component';
-import { FormsModule } from '@angular/forms';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { CorsInterceptorService } from './cors/cors-interceptor.service';
+import { PartyListComponent } from './home/party-list/party-list.component';
+import { PartyInstanceComponent } from './home/party-list/party-instance/party-instance.component';
 
 @NgModule({
   declarations: [
@@ -18,16 +20,25 @@ import { FormsModule } from '@angular/forms';
     HeaderComponent,
     HowToUseComponent,
     HomeComponent,
+    PartyListComponent,
+    PartyInstanceComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     RouterModule,
     PartyModule,
-    YouTubePlayerModule
+    YouTubePlayerModule,
+    HttpClientModule
   
   ],
-  providers: [],
+  providers: [
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: CorsInterceptorService,
+      multi: true
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

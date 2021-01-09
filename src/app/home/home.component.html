@@ -4,7 +4,7 @@
     <div class="col-lg-4"></div>
     <div class="col-lg-5">
         <div class="terminal">
-            <input class="custom-terminal" />
+            <input class="custom-terminal" (change)="test()" #searchByName />
         </div>
     </div>
     <div class="col-lg-4"></div>
@@ -22,3 +22,4 @@
         </div>
       </div>
 </div>
+<app-party-list [playerName]="this.playerName"></app-party-list>

@@ -8,8 +8,8 @@ import { PartyMember } from './party-member.model';
 })
 export class PartyMembersComponent implements OnInit, OnChanges {
 
-  test: PartyMember = new PartyMember("Veloester", "2020-12-10 23:10:09", "5 minutes", 0.99, 500);
-  partyMembers: PartyMember[] = new Array();
+  test: PartyMember = new PartyMember("Veloester", "2020-12-10 23:10:09", 5, 0.99, 500);
+  @Input() partyMembers: PartyMember[] = new Array();
   @Input() partyTotalLoot!: number;
 
   constructor() {
@@ -19,19 +19,22 @@ export class PartyMembersComponent implements OnInit, OnChanges {
   }
   ngOnChanges(changes: SimpleChanges): void {
     this.setPartyMembersLootSplit();
+    console.log("partyMembers on changes", this.partyMembers);
   }
 
   setPartyMembersLootSplit() {
-    var totalSharesPercent = 0;
-
+    var totalSharesPercent: number = 0.0;
+    console.log("setPartyMembersLootSplit");
     this.partyMembers.forEach(ptMember => {
-      totalSharesPercent += ptMember.lootSharePercent;
+      totalSharesPercent += +ptMember.percentTimeInParty;
     });
 
     this.partyMembers.forEach(ptMember => {
-      var silverShare = (ptMember.lootSharePercent * this.partyTotalLoot) / totalSharesPercent;
+      var silverShare = (+ptMember.percentTimeInParty * this.partyTotalLoot) / totalSharesPercent;
       ptMember.lootShareSilver = silverShare;
+      console.log(ptMember.playerName, silverShare);
     });
+    console.log("partyMembers : ", this.partyMembers);
   }
 
   ngOnInit(): void {
