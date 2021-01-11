@@ -8,14 +8,11 @@ import { PartyMember } from './party-member.model';
 })
 export class PartyMembersComponent implements OnInit, OnChanges {
 
-  test: PartyMember = new PartyMember("Veloester", "2020-12-10 23:10:09", 5, 0.99, 500);
   @Input() partyMembers: PartyMember[] = new Array();
   @Input() partyTotalLoot!: number;
 
   constructor() {
     this.partyTotalLoot = 0;
-    //with a service fetch partyMembers...
-    this.partyMembers = [this.test, this.test, this.test];
   }
   ngOnChanges(changes: SimpleChanges): void {
     this.setPartyMembersLootSplit();

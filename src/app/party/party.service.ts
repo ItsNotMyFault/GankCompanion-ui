@@ -7,29 +7,28 @@ import { PartyMember } from './party-members/party-member.model';
 export class PartyService {
     partyMembersChanged = new Subject<PartyMember[]>();
 
-    test: PartyMember = new PartyMember("Veloester", "2020-12-10 23:10:09", 5, 0.99, 500);
     private partyMembers: PartyMember[] = [];
 
     constructor(private http: HttpClient) {
-        this.partyMembers = [this.test, this.test];
     }
-    backendUrl: string = "https://gankcompanion.azurewebsites.net/Party/"
+    backendUrl: string = "https://localhost:44331/Party/"
+    // backendUrl: string = "https://gankcompanion.azurewebsites.net/Party/"
 
     async getPartyMembers(partyId: string) {
         var subscriptionResult = await this.http.get<any>(this.backendUrl + 'GetPartyMembersByPartyId?partyId=' + partyId).toPromise();
-        console.log(subscriptionResult);
+        console.log("getPartyMembers", subscriptionResult);
         return subscriptionResult;
     }
 
     async getPartiesByPlayerName(playerName: string) {
         var subscriptionResult = await this.http.get<any>(this.backendUrl + 'GetPartiesByPlayerName?playerName=' + playerName).toPromise();
-        console.log(subscriptionResult);
+        console.log("getPartiesByPlayerName", subscriptionResult);
         return subscriptionResult;
     }
 
     async getPartyReportByPartyId(partyId: string) {
         var subscriptionResult = await this.http.get<any>(this.backendUrl + 'GetPartyReport?partyId=' + partyId).toPromise();
-        console.log(subscriptionResult);
+        console.log("getPartyReportByPartyId", subscriptionResult);
         return subscriptionResult;
     }
 
