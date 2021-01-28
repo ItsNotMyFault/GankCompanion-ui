@@ -4,15 +4,17 @@ import {
     HttpRequest,
     HttpHandler,
     HttpParams,
-    HttpHeaders
+    HttpHeaders,
+    HttpErrorResponse
 } from '@angular/common/http';
-import { take, exhaustMap } from 'rxjs/operators';
+import { take, exhaustMap, catchError } from 'rxjs/operators';
 
-import { Observable } from 'rxjs';
+import { EMPTY, Observable } from 'rxjs';
+import { Router } from '@angular/router';
 
 @Injectable()
 export class CorsInterceptorService implements HttpInterceptor {
-    constructor() { }
+    constructor(private router: Router) { }
 
     intercept(req: HttpRequest<any>, next: HttpHandler) {
         const headersss = new HttpHeaders({
@@ -23,7 +25,12 @@ export class CorsInterceptorService implements HttpInterceptor {
         })
 
         const cloneRequest = req.clone({ headers: headersss });
-        return next.handle(cloneRequest);
+        return next.handle(cloneRequest).pipe(
+            catchError((error: HttpErrorResponse) => {
+                this.router.navigate(['nopartyfound']);
+                return EMPTY;
+            })
+        );
 
     }
 }

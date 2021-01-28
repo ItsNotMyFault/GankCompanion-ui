@@ -13,16 +13,20 @@ export class PartyListComponent implements OnInit, OnChanges {
 
   constructor(private partyService: PartyService) {
     this.parties = [];
-   }
-
-  async ngOnChanges(changes: SimpleChanges): Promise<void> {
-    const someParties = await this.partyService.getPartiesByPlayerName(this.playerName);
-    this.parties = someParties.partyMembersResponse;
-    console.log("getPartiesByPlayerName", this.parties);
   }
 
-  ngOnInit(): void {
+  async ngOnChanges(changes: SimpleChanges): Promise<void> {
+    if (this.playerName !== undefined && this.playerName.length > 2) {
+      const someParties = await this.partyService.getPartiesByPlayerName(this.playerName);
+      this.parties = someParties.partyMembersResponse;
+      console.log("getPartiesByPlayerName", this.parties);
+    }
+  }
 
+  async ngOnInit(): Promise<void> {
+    const someParties = await this.partyService.getMostRecentParties();
+    this.parties = someParties.partyMembersResponse;
+    console.log("getMostRecentParties", this.parties);
   }
 
 }

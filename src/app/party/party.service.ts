@@ -32,4 +32,10 @@ export class PartyService {
         return subscriptionResult;
     }
 
+    async getMostRecentParties() {
+        var subscriptionResult = await this.http.get<any>(this.backendUrl + 'GetAllParties').toPromise();
+        console.log("getPartyReportByPartyId", subscriptionResult);
+        return subscriptionResult;
+    }
+
 }

@@ -13,12 +13,14 @@ import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { CorsInterceptorService } from './cors/cors-interceptor.service';
 import { PartyListComponent } from './home/party-list/party-list.component';
 import { PartyInstanceComponent } from './home/party-list/party-instance/party-instance.component';
+import { NoPartyFoundComponent } from './no-party-found/no-party-found.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     HowToUseComponent,
+    NoPartyFoundComponent,
     HomeComponent,
     PartyListComponent,
     PartyInstanceComponent
